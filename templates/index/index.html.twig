@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+<header class="bg-dark my auto text-light">
+<h1 class="text-center">Portfolio de Maguette ISSIAKA</h1>
+<h2 class="text-center">Développeuse Web</h2>
+<br>
+    
+</header>
+
+<div class="container p-5">
+
+    <div class="row py-5">
+    <div class="col-12">
+         <h2>Mes Projets</h2>
+        </div>
+    </div>
+
+    <div class="row">
+
+    {% for projet in projets %}
+    <div class="col-4 p-3">
+    <div class="card">
+    <div class="card-body">
+    <h5 class="carrd-title">{{ projet.nom }}</h5>
+    <p href={{ projet.lien }} class="card-link">Découvrir</a>
+    </div>
+    </div>
+</div>
+{% endfor %}
+</div>
+</div>
+
+{% endblock %}
