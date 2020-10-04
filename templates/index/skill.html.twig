@@ -1,0 +1,40 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}Compétences{% endblock %}
+
+{% block body %}
+{{ parent() }}
+
+<div class="col-10 p-5">
+<h2>liste des competences</h2>
+<table class="table table-bordered table-hover table-sm text-center">
+    <thead>
+    <tr>
+       <th scope="col">N°</th>
+       <th scope="col">Type</th>
+       <th scope="col">Nom</th>
+       <th scope="col"></th>
+
+    </tr>
+    </thead>
+    <tbody>
+    {% for competence in competences %}
+    <tr>
+       <td>{{ loop.index }}</td>
+       <td>{{ competence.type }}</td>
+       <td>{{ competence.nom }}</td>
+       <td>
+          <a href="{{ path('competences_update', {'id':competence.id}) }}">Modifier</a> |
+          <a href="{{ path('competences_delete', {'id':competence.id}) }}">Supprimer</a>
+       </td>
+    </tr>
+       {% endfor %}
+    </tbody>
+</table>
+<a href="{{ path('competences_create') }}" class="btn-outline-dark float-right">Ajouter</a>
+</div>
+
+{% endblock %}
+
+
+    

@@ -47,5 +47,15 @@ class CompetencesRepository extends ServiceEntityRepository
         ;
     }
     */
+    public function findByType($value)
+    {
+        return $this->createQueryBuilder('p')
+        ->andWhere('p.type = :val')
+        ->setParameter('val', $value)
+        ->orderBy('p.id','ASC')
+        ->getQuery()
+        ->getResult()
+        ;
+    }
     
 }
