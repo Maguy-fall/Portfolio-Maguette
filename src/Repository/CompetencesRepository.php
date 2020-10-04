@@ -47,4 +47,5 @@ class CompetencesRepository extends ServiceEntityRepository
         ;
     }
     */
+    
 }
